@@ -109,7 +109,7 @@
         min-width: 30px;        
         margin-top: 50px;
         margin-right: 50px;
-        border-radius: 5%;
+        border-radius: 25%;
         transition-duration: 0.4s;
         font-size: large;
         background-color: rgb(7, 60, 130);
