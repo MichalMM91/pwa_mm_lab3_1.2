@@ -10,17 +10,10 @@
             </div>
             <div class="line-wrapper">
 
-                <div class="arrow">
-                    <ArrowImage image="https://cdn-icons-png.flaticon.com/512/275/275203.png?w=740&t=st=1680877096~exp=1680877696~hmac=c0a4b40befae097712eefc32063676fa1b8e86b5a4624882c3bd873a7ea4723f"/>
-                </div>
-
                 <div class="small-items centered">
                     <SmallImages :images="items" @selectedImg="showImg($event)"/>
                 </div> 
 
-                <div class="arrow">
-                    <ArrowImage image="https://cdn-icons-png.flaticon.com/512/156/156324.png?w=740&t=st=1680877098~exp=1680877698~hmac=7a0f82216d2e948d89d6cad1a34a9d0ac1d430aee121d9f2aafd7ea47b8c7dd8"/>
-                </div>
                 <Modal v-show="showModal" :image="img" @closeModal="runModal($event)"/>
             </div>
             
@@ -34,13 +27,12 @@
 /* poniżej importuję komponenty z folderu components */
 import BigImage from '~/components/gallery/bigimage.vue';
 import SmallImages from '~/components/gallery/smallimages.vue';
-import ArrowImage from '~/components/gallery/arrowimage.vue';
 import TopNav from '../components/nav/TopNav.vue';
 import Modal from '~/components/modals/modal.vue';
 
 export default {
     name: 'Gallery',
-    components: { TopNav, BigImage, SmallImages, ArrowImage, Modal },
+    components: { TopNav, BigImage, SmallImages, Modal },
     data() {
        return {
         items: [
@@ -87,7 +79,7 @@ export default {
 
 .small-items {
     width: 60vw;
-    height: 20vh;
+    height: 18vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

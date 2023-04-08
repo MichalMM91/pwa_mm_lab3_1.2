@@ -69,7 +69,7 @@
         background-color: rgba(255, 255, 255, 0.4);
     }
     .column-wrapper{
-        width: 30vw;
+        width: 20vw;
         height: 80vh;
         margin-top: 50px;
         margin-bottom: auto;
@@ -81,7 +81,7 @@
     }
     .modal-content{
 
-        width: 70vw;
+        width: 80vw;
         margin-top: 50px;
         margin-bottom: auto;
         margin-left: auto;
