@@ -3,37 +3,57 @@
     <div class="modal">
         <div class="column-wrapper" >
             <div class="small-items centered">
-                <SmallImages :images="items" @selectedImg="showImg($event)"/>
-               
+                <SmallImagesInModal :images="items" @selectedImg="showImage($event)"/>
             </div>
         </div>
-
-        <div class="modal-content" @click="closeModal">
-            <img :src="image" style="width:600px" >
+        
+        <div class="modal-content">
+            <img :src="image" style="width:65vw" >
             
+        </div>
+
+        <div>
+            <button class="button-close" @click="closeModal">X</button>
         </div>
     </div>
 </template>
 
 <script>
-    import SmallImages from '../gallery/smallimages.vue';
-
+    import SmallImagesInModal from '../gallery/smallimagesinmodal.vue';
     export default{
-        components: {SmallImages},
         name: 'Modal',
+        
+        components: {SmallImagesInModal},
+        
         props: {
             image: {
             type: String,
             default: () => ''
+            },
+            
         },
-    },
+        
+        created (){
+             console.log('on create') 
+        },
+
         methods: {
             closeModal() {
                 this.$emit('closeModal', false)
             },
-       
+            showImage(url) {
+                this.image = url;
+            }
         },
-        
+        data() {
+            return {
+                items: [
+                    'https://img.freepik.com/premium-zdjecie/zloto-czarny-zegarek-z-niebieska-tarcza-i-czerwonymi-wskazowkami_534373-3181.jpg?w=1060',
+                    'https://img.freepik.com/premium-zdjecie/nowoczesny-zegarek-na-reke-z-bliska_488220-21996.jpg?w=1060',
+                    'https://img.freepik.com/premium-zdjecie/mechaniczny-zegarek-na-reke-na-czarnym-tle-zblizenie_508835-446.jpg?w=1060'
+                ],
+            };
+        },
     
 };
 </script>
@@ -46,12 +66,12 @@
         top: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.4);
     }
     .column-wrapper{
         width: 30vw;
         height: 80vh;
-        margin-top: 30px;
+        margin-top: 50px;
         margin-bottom: auto;
         margin-left: auto;
         margin-right: auto;
@@ -61,9 +81,8 @@
     }
     .modal-content{
 
-        width: 700px;
-        height: 700px;
-        margin-top: 30px;
+        width: 70vw;
+        margin-top: 50px;
         margin-bottom: auto;
         margin-left: auto;
         margin-right: auto;
@@ -75,16 +94,31 @@
 
     .small-items {
         width: 100px;
-        /* display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: center;
-         */
+        
     }
 
     .centered {
         text-align: center;
 
     }
+
+    .button-close {
+        width: 4vw;
+        height: 4vw;
+        min-height: 30px;
+        min-width: 30px;        
+        margin-top: 50px;
+        margin-right: 50px;
+        border-radius: 5%;
+        transition-duration: 0.4s;
+        font-size: large;
+        background-color: rgb(7, 60, 130);
+        color: azure;
+    }
+    .button-close:hover {
+        cursor:pointer;
+        background-color: #c90f0fa7;
+        color: black;
+    }
+
 </style>
