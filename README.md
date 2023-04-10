@@ -1,5 +1,11 @@
 # pwamm2
 
+Projekt realizowany w ramach przedmiotu Tworzenie Aplikacji PWA w technologii Vue.js v2 i NUXT v2.
+Przedstawia stronę internetową fikcyjnego sklepu z zegarkami.
+
+Słowa kluczowe:
+modal, przekazanie props, komponenty, routing, thumbnail, box model
+
 ## Build Setup
 
 ```bash
