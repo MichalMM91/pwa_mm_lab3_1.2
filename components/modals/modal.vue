@@ -3,7 +3,7 @@
     <div class="modal">
         <div class="column-wrapper" >
             <div class="small-items centered">
-                <SmallImagesInModal :images="items" @selectedImg="showImage($event)"/>
+                <SmallImages :images="items" @selectedImg="showImage($event)"/>
             </div>
         </div>
         
@@ -19,11 +19,11 @@
 </template>
 
 <script>
-    import SmallImagesInModal from '../gallery/smallimagesinmodal.vue';
+    import SmallImages from '../gallery/smallimages.vue';
     export default{
         name: 'Modal',
         
-        components: {SmallImagesInModal},
+        components: {SmallImages},
         
         props: {
             image: {
