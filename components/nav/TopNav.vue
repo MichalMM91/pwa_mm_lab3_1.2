@@ -3,12 +3,19 @@
     <div class="nav">
         <NuxtLink class="nav-item" to="/">Świat zegarków</NuxtLink>
         <NuxtLink class="nav-item" to="/gallery">Nasza oferta</NuxtLink>
+        <NuxtLink class="nav-item" :to="'/watches/' + name" >Routing do rolexa</NuxtLink>
     </div>
   </template>
   
   <script>
-  export default {
-    name: 'NavPage'
+  export default {  
+    name: 'NavPage',
+     data() {
+      return{
+        name: 'rolex'
+      }
+      
+    } 
   }
   </script>
   <!-- kod css strony about -->
