@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TopNav />
+        <!-- <TopNav /> -->
         
         <h1 class="centered">Galeria zegarków</h1>
         <!-- w divie wrappera znajdują się tagi odnoszące się do komponentów ze wskazaniem adresu w parametrze image -->

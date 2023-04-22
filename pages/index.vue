@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopNav />
+   <!--  <TopNav /> -->
     <div class="quotes">
       <h2 class="padding50"><i>Witaj na witrynie naszego wyimaginowanego sklepu.<br>
         Odmierzaj swój bezcenny czas jednym z zegarków z naszej oferty</i></h2>
