@@ -4,6 +4,7 @@
         <NuxtLink class="nav-item" to="/">Świat zegarków</NuxtLink>
         <NuxtLink class="nav-item" to="/gallery">Nasza oferta</NuxtLink>
         <NuxtLink class="nav-item" :to="'/watches/' + name" >Routing do rolexa</NuxtLink>
+        <NuxtLink class="nav-item" to="/nasa">Nasa</NuxtLink>
     </div>
   </template>
   
