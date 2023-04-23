@@ -10,13 +10,23 @@
         <button @click="$event =>find()">Wyszukaj</button>
         </div>
     <div className="nasa">
-            <img 
-            :src="value.links[0].href"
-            v-for="(value, index) in dataArr"
-            :key="index"
-            class="img"       
-            />
+
+        <template v-for="value in dataArr">
+            <template v-for="(link,index) in value.links">
+                <img 
+                    v-if="index!=1"
+                    :data-index="index"
+                    :src="link.href"
+                    class="img"       
+                    />
+
             
+            </template>     
+            
+
+        </template>
+
+
     </div>
    
     </div>
@@ -35,7 +45,7 @@
             data() {
                 return {
                     dataArr: [],
-                    message: "sun"
+                    message: "earth"
                 }
             },
 
