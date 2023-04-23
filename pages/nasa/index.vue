@@ -1,19 +1,21 @@
 <template>
     <div>
     <h1>Nasa</h1>
-   <div>
+    <br>
+    <h3>Wyszukiwarka zwraca kolekcję zdjęć z endpointu Nasa<br>
+    Należy wprowadzić nazwę planety w języku angielskim </h3>
+    <br>
+    <div>
     <input v-model="message" placeholder="search..." />
-    <button @click="$event =>find()">SEARCH</button>
+    <button @click="$event =>find()">Wyszukaj</button>
    </div>
-   <div style="display: flex; 
-            flex-wrap: wrap; width: 100vw; 
-            justify-content: center">
-        <img
+   <div className="nasa">
+        <img 
         :src="value.links[0].href"
         v-for="(value, index) in dataArr"
         :key="index"
-        style="width: 100px; height: 100px; 
-        object-fit: cover; padding: 5px"/>
+        class="img"       
+        />
         
     </div>
    
@@ -60,5 +62,18 @@
    </script>
    
    <style scoped>
+    .nasa{
+        display: flex; 
+        flex-wrap: wrap; 
+        width: 100vw; 
+        justify-content: center
+
+    }
+    .img{
+        width: 100px; 
+        height: 100px; 
+        object-fit: cover; 
+        padding: 5px
+    }
    </style>
    
