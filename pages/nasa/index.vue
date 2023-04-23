@@ -14,7 +14,7 @@
         <template v-for="value in dataArr">
             <template v-for="(link,index) in value.links">
                 <img 
-                    v-if="index!=1"
+                    v-if="index==0"
                     :data-index="index"
                     :src="link.href"
                     class="img"       
