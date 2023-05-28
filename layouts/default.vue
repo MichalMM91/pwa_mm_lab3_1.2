@@ -2,10 +2,18 @@
   <div>
     <navTopNav />
     <Nuxt />
-    <modalsnasaModal v-if="modal.show">
-      <img :src="modal.content" style="width: 100%; height: 100%" />
-    </modalsnasaModal>
-
+    
+          <modalnasaModal class="modal" v-if="modal.show">
+            <div class="modal">
+              <div class="content-modal">
+                <div>
+                    <button class="button-close" @click="closeModal" >X</button>
+                </div>
+                <img  @click="closeModal" :src="modal.content" style="width: 80%; height: 80%" />
+              </div>
+            </div>
+          </modalnasaModal>
+        
    <div class="chat">
             <div class="chat-top" @click="toggleChat">Chat</div>
 
@@ -19,12 +27,13 @@
   </div>
 </template>
 <script>
-//import nasaModal from "../components/modals/nasaModal.vue";
+
+import nasaModal from "../components/modals/nasaModal.vue";
 export default {
   name: "NuxtComponent",
-  /* components: {
+   components: {
     nasaModal,
-  }, */
+  }, 
   data() {
     return {
       chatVisible: false,
@@ -46,6 +55,13 @@ export default {
       this.modal.content = e.content;
       this.modal.show = e.state;
     },
+    closeModal() {
+        const data = {
+          state: false,
+          content: null,
+        };
+        this.$nuxt.$emit("closeModal", data);
+      },
   },
 };
 </script>
@@ -109,4 +125,46 @@ a {
   padding: 1rem 2rem;
   margin-left: -2rem;
 }
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .content-modal {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 75%;
+    background-color: #eee;
+    border-radius: 1rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 90%;
+  }
+
+  .button-close {
+        width: 4vw;
+        height: 4vw;
+        min-height: 30px;
+        min-width: 30px;        
+        margin-top: 50px;
+        margin-right: 50px;
+        border-radius: 25%;
+        transition-duration: 0.4s;
+        font-size: large;
+        background-color: rgb(7, 60, 130);
+        color: azure;
+    }
 </style>

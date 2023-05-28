@@ -1,7 +1,7 @@
-<template>
+<!-- <template>
     <div class="modal">
       <div class="content-modal">
-        <span class="close" @click="closeModal">Zamknij</span>
+        <span class="close" @click="closeModal">X</span>
   
         <div class="content">
           <slot></slot>
@@ -52,4 +52,4 @@
     max-height: 90%;
   }
  
-  </style>
+  </style> -->

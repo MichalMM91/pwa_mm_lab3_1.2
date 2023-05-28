@@ -7,17 +7,7 @@
         <br>
         <div>
         <input v-model="message" placeholder="search..." />
-        <!-- <div class="imgcontainer">
-            <img
-                :src="value"
-                v-for="(value, index) in imgs1"
-                :key="test + index"
-                height="40px"
-                width="80px"
-                @click="setModal(value)"
-                class="smallimage"
-            />
-        </div> -->
+        
         <button @click="$event =>find()">Wyszukaj</button>
         </div>
     <div style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center" >
