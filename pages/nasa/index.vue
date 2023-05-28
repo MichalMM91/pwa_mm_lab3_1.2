@@ -7,18 +7,31 @@
         <br>
         <div>
         <input v-model="message" placeholder="search..." />
+        <!-- <div class="imgcontainer">
+            <img
+                :src="value"
+                v-for="(value, index) in imgs1"
+                :key="test + index"
+                height="40px"
+                width="80px"
+                @click="setModal(value)"
+                class="smallimage"
+            />
+        </div> -->
         <button @click="$event =>find()">Wyszukaj</button>
         </div>
-    <div className="nasa">
+    <div style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center" >
 
         <template v-for="value in dataArr">
             <template v-for="(link,index) in value.links">
                 <img 
-                    v-if="index==0"
+                    @click="setModal(link.href)"
+                    alt=""
+                    v-if="index===0"
                     :data-index="index"
                     :src="link.href"
-                    class="img"       
-                    />
+                    style="width: 100px; height: 100px; object-fit: cover; padding: 5px"/>   
+                    
 
             
             </template>     
@@ -54,16 +67,27 @@
                     this.fetchData()
                     
                 },
-                async fetchData() {
-                    await axios.get('https://images-api.nasa.gov/search?q='+this.message)
+                async fetchData(value) {
+                    await axios.get('https://images-api.nasa.gov/search?q='+ this.message)
                         .then(res => {
                             this.dataArr = res.data.collection.items;
+                            console.log(res.data.collection.items);
+                            this.currentCollection = this.message;
+                            
+
                         })
                         .catch(error =>  {
                             console.log(error)
                         })
                 
-                }
+                },
+                setModal(value) {
+                    const data = {
+                        state: true,
+                        content: value,
+                    };
+                    this.$nuxt.$emit("openModal", data);
+                    },
             }
 
         }
