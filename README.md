@@ -1,10 +1,11 @@
 # pwamm2
 
 Projekt realizowany w ramach przedmiotu Tworzenie Aplikacji PWA w technologii Vue.js v2 i NUXT v2.
-Przedstawia stronę internetową fikcyjnego sklepu z zegarkami.
+Przedstawia stronę internetową fikcyjnego sklepu z zegarkami. Dodatkowo, pobiera dane z endpointu nasa z możliwością wyszukiwania po nazwie planety + wyświetlanie powiększonego obrazka w modalu.
+Chatbox oparty o zmienne sesyjne.
 
 Słowa kluczowe:
-modal, przekazanie props, komponenty, routing, thumbnail, box model
+modal, przekazanie props, komponenty, routing, thumbnail, box model, chatbox, endpoint, parsing
 
 ## Build Setup
 
