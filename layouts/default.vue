@@ -3,16 +3,16 @@
     <navTopNav />
     <Nuxt />
     
-          <modalnasaModal class="modal" v-if="modal.show">
+          <div class="modal" v-if="modal.show">
             <div class="modal">
               <div class="content-modal">
                 <div>
                     <button class="button-close" @click="closeModal" >X</button>
                 </div>
-                <img  @click="closeModal" :src="modal.content" style="width: 80%; height: 80%" />
+                <img class="image-in-modal" @click="closeModal" :src="modal.content"  />
               </div>
             </div>
-          </modalnasaModal>
+          </div>
         
    <div class="chat">
             <div class="chat-top" @click="toggleChat">Chat</div>
@@ -28,12 +28,9 @@
 </template>
 <script>
 
-import nasaModal from "../components/modals/nasaModal.vue";
 export default {
   name: "NuxtComponent",
-   components: {
-    nasaModal,
-  }, 
+   
   data() {
     return {
       chatVisible: false,
@@ -66,24 +63,7 @@ export default {
 };
 </script>
 <style>
-.nav {
-  display: flex;
-  height: 4vh;
-  align-items: center;
-  background-color: goldenrod;
-  margin-bottom: 5rem;
-}
-.navi-item {
-  margin: 3rem;
-  padding: 1rem;
-  opacity: 0.9;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-}
-.navi-item:hover {
-  background-color: white;
-  opacity: 1;
-}
+
 a {
   color: black;
   text-decoration: none;
@@ -159,12 +139,19 @@ a {
         height: 4vw;
         min-height: 30px;
         min-width: 30px;        
-        margin-top: 50px;
-        margin-right: 50px;
+        margin-top: 20px;
+        margin-right: 20px;
         border-radius: 25%;
         transition-duration: 0.4s;
         font-size: large;
         background-color: rgb(7, 60, 130);
         color: azure;
+    }
+
+    .image-in-modal {
+      /* width: 80%;
+      height: 80%; */
+      height: 80%;
+      max-width: 100%;
     }
 </style>
